@@ -1,0 +1,17 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Meine Bierwelt – Bearbeiten</title><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><link rel="stylesheet" href="style.css"></head>
+<body><main><header><div><h1>🍺 Meine Bierwelt – Bearbeiten</h1><p>Nur für den Besitzer · Änderungen werden zentral gespeichert</p></div><a href="index.html">Öffentliche Karte ansehen</a></header>
+<div id="login" class="panel"><h2>Anmelden</h2><p>Mit deinem Supabase-Benutzerkonto anmelden.</p>
+<div class="controls"><input id="email" type="email" placeholder="E-Mail" autocomplete="username"><input id="password" type="password" placeholder="Passwort" autocomplete="current-password"></div>
+<p><button id="loginBtn">Anmelden</button></p><div id="loginStatus" role="status"></div></div>
+<div id="editor" class="hidden"><div class="panel"><div class="controls">
+<input id="countries" placeholder="z. B. Deutschland, Dänemark, Färöer">
+<button id="addBtn">Länder hinzufügen</button><button id="saveBtn">Änderungen speichern</button>
+<button id="logoutBtn" class="secondary">Abmelden</button></div>
+<p class="muted">Mehrere Länder durch Komma trennen. Auf der Karte klicken, um ein Land hinzuzufügen oder zu entfernen. Erst „Änderungen speichern“ veröffentlicht den Stand.</p>
+<div id="status" role="status">Karte wird geladen …</div></div>
+<div id="map"></div><div class="panel"><strong>Ausgewählt (<span id="count">0</span>)</strong><div id="selected">–</div>
+<p><button id="clearBtn" class="danger">Alle Länder abwählen</button></p></div></div>
+</main><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="config.js"></script><script src="aliases.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script><script src="app.js"></script></body></html>
