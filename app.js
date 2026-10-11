@@ -16,7 +16,14 @@ function code(f){
   if (['norway', 'norwegen', 'norge'].includes(countryName)) {
     return 'NOR';
   }
-
+  if ([
+  'trinidad and tobago',
+  'trinidad & tobago',
+  'trinidad und tobago',
+  'trinidad tobago'
+].includes(countryName)) {
+  return 'TTO';
+}
   for (const k of [
     'ISO3166-1-Alpha-3',
     'ISO_A3',
