@@ -7,7 +7,7 @@ const normalize=x=>String(x||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'')
 const lookup=Object.fromEntries(Object.entries(aliases).map(([n,c])=>[normalize(n),c]));
 const selected=new Set();let features=[],geoLayer=null,map=null,db=null,ready=false;
 function say(s){if(statusEl)statusEl.textContent=s;}
-function code(f){const p=f.properties||{};for(const k of ['ISO3166-1-Alpha-3','ISO_A3','iso_a3','ADM0_A3','GU_A3']){const v=String(p[k]||'').toUpperCase();if(/^[A-Z]{3}$/.test(v)&&v!=='---')return v;}return '';}
+function code(f){const p=f.properties||{};if(['norway','norwegen','norge'].includes(normalize(p.ADMIN||p.name||p.NAME)))return 'NOR';for(const k of ['ISO3166-1-Alpha-3','ISO_A3','iso_a3','ADM0_A3','GU_A3']){const v=String(p[k]||'').toUpperCase();if(/^[A-Z]{3}$/.test(v)&&v!=='---')return v;}return '';}
 function name(f){const p=f.properties||{};return p.ADMIN||p.name||p.NAME||'Unbekannt';}
 function countryColor(c){ // Unique hue for each ISO3 code, independent of selection order.
   const n=Array.from(c).reduce((a,x)=>a*27+x.charCodeAt(0),0);
