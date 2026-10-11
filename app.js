@@ -1,4 +1,3 @@
-
 'use strict';
 
 const editMode = location.pathname.endsWith('/admin.html');
@@ -382,4 +381,3 @@ async function showEditor() {
 }
 
 start();
-
