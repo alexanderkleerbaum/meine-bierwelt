@@ -14,7 +14,7 @@ function code(f){
   const countryName = normalize(name(f));
   if (['france', 'frankreich'].includes(countryName)) {
   return 'FRA';
-  }
+  
     if (['norway', 'norwegen', 'norge'].includes(countryName)) {
     return 'NOR';
   }
