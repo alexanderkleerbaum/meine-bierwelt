@@ -18,7 +18,7 @@ function code(f){
   }
   if ([
   'trinidad and tobago',
-  'trinidad & tobago',
+  'Trinidad & Tobago',
   'trinidad und tobago',
   'trinidad tobago'
 ].includes(countryName)) {
